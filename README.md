@@ -1,4 +1,5 @@
-# chattool2.0 基于websocket的聊天工具，实现单聊，群聊，通讯录，添加好友，更换背景，个人资料等功能。
+# chattool2.0 
+基于websocket的聊天工具，实现单聊，群聊，通讯录，添加好友，更换背景，个人资料等功能。
 
 ## Project setup
 ```
