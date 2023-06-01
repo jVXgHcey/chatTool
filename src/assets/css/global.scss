@@ -1,0 +1,285 @@
+body,
+div,
+span,
+header,
+footer,
+nav,
+section,
+aside,
+article,
+ul,
+dl,
+dt,
+dd,
+li,
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+i,
+b,
+textarea,
+button,
+input,
+select,
+figure,
+figcaption {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-style: normal;
+  text-decoration: none;
+  border: none;
+  box-sizing: border-box;
+  font-weight: lighter;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  font-family: PingFangSC-Regular, -apple-system, Helvetica, sans-serif;
+  &:focus {
+    outline: none;
+  }
+}
+input[type="button"],
+input[type="submit"],
+input[type="search"],
+input[type="reset"] {
+  -webkit-appearance: none;
+}
+
+textarea {
+  -webkit-appearance: none;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #ebebeb;
+  overflow-y: hidden;
+}
+#app {
+  height: 100%;
+}
+div {
+  box-sizing: border-box;
+}
+.clear:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.clear {
+  zoom: 1;
+}
+
+.back_img {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.margin {
+  margin: 0 auto;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.scroll {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+//色值
+$black: #373b3e;
+$sc: #2c2b30;
+$littlesc: #969a9d;
+$bgcolor: #ebebeb;
+
+//定位上下左右居中
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+//上下居中
+@mixin topcenter {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+//左右居中
+@mixin leftcenter {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+//flex布局
+@mixin justify($value: space-between) {
+  display: flex;
+  justify-content: $value;
+}
+
+//上下居中
+@mixin align($type: center) {
+  display: flex;
+  align-items: center;
+}
+
+//字体大小，颜色
+@mixin sizeColor($size, $color) {
+  font-size: $size;
+  color: $color;
+}
+//字体大小、行高、字体
+@mixin fontStyle($size, $line-height) {
+  font: #{$size}/#{$line-height};
+}
+//宽高
+@mixin widthHeight($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin bg($url) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.pageWrap {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.no-data-text {
+  font-size: 12px;
+}
+//按钮样式
+
+.tgl {
+  display: none;
+}
+.tgl,
+.tgl:after,
+.tgl:before,
+.tgl *,
+.tgl *:after,
+.tgl *:before,
+.tgl + .tgl-btn {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.tgl::-moz-selection,
+.tgl:after::-moz-selection,
+.tgl:before::-moz-selection,
+.tgl *::-moz-selection,
+.tgl *:after::-moz-selection,
+.tgl *:before::-moz-selection,
+.tgl + .tgl-btn::-moz-selection {
+  background: none;
+}
+.tgl::selection,
+.tgl:after::selection,
+.tgl:before::selection,
+.tgl *::selection,
+.tgl *:after::selection,
+.tgl *:before::selection,
+.tgl + .tgl-btn::selection {
+  background: none;
+}
+.tgl + .tgl-btn {
+  outline: 0;
+  display: block;
+  width: 1.92rem;
+  height: 1.024rem;
+  position: relative;
+  cursor: pointer;
+}
+.tgl + .tgl-btn:after,
+.tgl + .tgl-btn:before {
+  position: relative;
+  display: block;
+  content: "";
+  width: 50%;
+  height: 100%;
+}
+.tgl + .tgl-btn:after {
+  left: 0;
+}
+.tgl + .tgl-btn:before {
+  display: none;
+}
+.tgl:checked + .tgl-btn:after {
+  left: 50%;
+}
+.tgl-light + .tgl-btn {
+  background: #999999;
+  border-radius: 2em;
+  padding: 2px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.tgl-light + .tgl-btn:after {
+  border-radius: 50%;
+  background: #fff;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.tgl-light:checked + .tgl-btn {
+  background: #1aad16;
+}
+
+.mint-popup-top {
+  z-index: 2007;
+  width: 100%;
+  text-align: center;
+  font-size: 22px;
+  padding: 28px 0;
+  background: rgba(0, 0, 0, 0.64);
+  color: #fff;
+}
+
+.mint-popup-top + .v-modal {
+  background: none;
+}
+
+/*去除浏览器记住密码背景色*/
+input:-webkit-autofill {
+  -webkit-text-fill-color: initial !important;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: initial;
+  background: none !important;
+}
+
+input:focus {
+  outline: none;
+}
+
+.no-data-text {
+  display: none;
+}
